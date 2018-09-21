@@ -1,0 +1,172 @@
+﻿@model TradeDetailsViewModel
+@{
+    ViewData["Title"] = $"Details for {Model.TradePair}";
+}
+
+<h2>@ViewData["Title"]</h2>
+<br />
+@if (Model.TradeStatus.ToString() != "Closed")
+{
+    <div class="align-content-xl-start" style="font-size:18px;color:black">
+
+        <div class="col-md-12">
+
+            <div class="form">
+                Pair: &nbsp @Model.TradePair
+            </div>
+            <hr />
+
+            <div class="form">
+                Order type:&nbsp @Model.OrderType
+            </div>
+            <hr />
+
+            <div class="form">
+                Order status:&nbsp @Html.DisplayFor(m => m.TradeStatus)
+            </div>
+            <hr />
+
+            <div class="form">
+                Size: &nsbp @Html.DisplayFor(m=>m.Quantity)
+            </div>
+            <hr />
+
+            <div class="form">
+                Execution price:&nbsp @Html.DisplayFor(m => m.ExecutionPrice)
+            </div>
+            <hr />
+
+            <div class="form">
+                Execution date:&nbsp @Html.DisplayFor(m => m.ExecutionDate):
+            </div>
+            <hr />
+
+            <div class="form">
+                Stop/Loss:&nbsp @Html.DisplayFor(m => m.StopLoss)
+            </div>
+            <hr />
+
+            <div class="form">
+                TakeProfit: &nbsp @Html.DisplayFor(m => m.TakeProfit)
+            </div>
+            <hr />
+
+            <div class="form">
+                Entry reason: &nbsp @Html.DisplayFor(m => m.ReasonForEntry)
+            </div>
+            <hr />
+
+            <div class="form">
+                Swap:&nbsp @Html.DisplayFor(m => m.Swap)
+            </div>
+            <hr />
+
+            <div class="form">
+                Commission: &nbsp @Html.DisplayFor(m => m.Commissions)
+            </div>
+            <hr />
+
+            <div class="form" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                Notes:
+                <br />
+                @Html.DisplayFor(m => m.Notes)
+            </div>
+            <hr />
+
+            <div class="form">
+                Image: &nbsp @Html.DisplayFor(m => m.Image)
+            </div>
+
+        </div>
+
+    </div>
+}
+    else
+    {
+        <div class="align-content-xl-start" style="font-size:18px;color:black">
+
+            <div class="col-md-12">
+
+                <div class="form">
+                    Pair: &nbsp @Model.TradePair
+                </div>
+                <hr />
+
+                <div class="form">
+                    Order type:&nbsp @Html.DisplayFor(m => m.OrderType)
+                </div>
+                <hr />
+
+                <div class="form">
+                    Order status:&nbsp @Html.DisplayFor(m => m.TradeStatus)
+                </div>
+                <hr />
+
+                <div class="form">
+                    Size:&nbsp @Html.DisplayFor(m => m.Quantity)
+                </div>
+                <hr />
+
+                <div class="form">
+                    Execution price:&nbsp @Html.DisplayFor(m => m.ExecutionPrice)
+                </div>
+                <hr />
+
+                <div class="form">
+                    Execution date:&nbsp @Html.DisplayFor(m => m.ExecutionDate):
+                </div>
+                <hr />
+
+                <div class="form">
+                    Closing price: &nbsp @Html.DisplayFor(m => m.ClosingPrice)
+
+                </div>
+                <hr />
+
+                <div class="form">
+                    Closing date: &nbsp @Html.DisplayFor(m => m.ClosingDate)
+
+                </div>
+                <hr />
+
+                <div class="form">
+                    Stop/Loss:&nbsp @Html.DisplayFor(m => m.StopLoss)
+                </div>
+                <hr />
+
+                <div class="form">
+                    TakeProfit: &nbsp @Html.DisplayFor(m => m.TakeProfit)
+                </div>
+                <hr />
+
+                <div class="form">
+                    Entry reason: &nbsp @Html.DisplayFor(m => m.ReasonForEntry)
+                </div>
+                <hr />
+
+                <div class="form">
+                    Swap:&nbsp @Html.DisplayFor(m => m.Swap)
+                </div>
+                <hr />
+
+                <div class="form">
+                    Commission: &nbsp @Html.DisplayFor(m => m.Commissions)
+                </div>
+                <hr />
+
+                <div class="form" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis">
+                    Notes:
+                    <br />
+                    @Html.DisplayFor(m => m.Notes)
+                </div>
+                <hr />
+
+                <div class="form">
+                    Image: &nbsp @Html.DisplayFor(m => m.Image)
+                </div>
+
+            </div>
+
+        </div>
+    }
+

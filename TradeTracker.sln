@@ -3,7 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradeTracker.WEB", "TradeTracker.WEB\TradeTracker.WEB.csproj", "{88FF6D2B-1AE3-46C4-839E-3C7DECBC9817}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradeTracker.DATA", "TradeTracker.DATA\TradeTracker.DATA.csproj", "{324C54AF-32D2-4998-8ED3-8B1F0E0090A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradeTracker.SERVICES", "TradeTracker.SERVICES\TradeTracker.SERVICES.csproj", "{7D2811B0-AFEE-4097-9990-D87711A81F61}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88FF6D2B-1AE3-46C4-839E-3C7DECBC9817}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88FF6D2B-1AE3-46C4-839E-3C7DECBC9817}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88FF6D2B-1AE3-46C4-839E-3C7DECBC9817}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88FF6D2B-1AE3-46C4-839E-3C7DECBC9817}.Release|Any CPU.Build.0 = Release|Any CPU
+		{324C54AF-32D2-4998-8ED3-8B1F0E0090A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{324C54AF-32D2-4998-8ED3-8B1F0E0090A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{324C54AF-32D2-4998-8ED3-8B1F0E0090A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{324C54AF-32D2-4998-8ED3-8B1F0E0090A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D2811B0-AFEE-4097-9990-D87711A81F61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D2811B0-AFEE-4097-9990-D87711A81F61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D2811B0-AFEE-4097-9990-D87711A81F61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D2811B0-AFEE-4097-9990-D87711A81F61}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

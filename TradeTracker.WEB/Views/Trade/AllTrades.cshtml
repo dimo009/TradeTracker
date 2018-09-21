@@ -1,0 +1,155 @@
+﻿@model TradesListViewModel
+@{
+    ViewData["Title"] = "All Trades";
+}
+
+<h2>All Trades</h2>
+
+<hr />
+
+<p>
+    Total number: <span class="badge-pill">@Model.AllTrades.Count()</span>
+</p>
+
+<br />
+
+<form class="form-inline my-sm-0 my-sm-0">
+    <input class="form-control mr-sm-1" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-sm-0 my-sm-0" type="submit">Search</button>
+</form>
+<br />
+<div class="form-border" style="align-self:auto">
+
+    <table  class="d" border="0">
+        <tr>
+            <th style="font-size:12px;color:black">
+                Pair
+            </th>
+            <th style="text-align:center; font-size:12px; color:black">
+                Order type
+            </th>
+            <th style="text-align:center; font-size:12px; color:black">
+                Status
+            </th>
+            <th style="text-align:center; font-size:12px; color:black">
+                Size
+            </th>
+            <th style="text-align:center; font-size:12px; color:black">
+                Execution price
+            </th>
+            <th style="text-align:center; font-size:12px; color:black">
+                Execution date
+            </th>
+            <th style="text-align:center; font-size:12px; color:black">
+                Closing price
+            </th>
+            
+            <th style="text-align:center; font-size:12px; color:black">
+                Closing date
+            </th>
+            <th style="text-align:center; font-size:12px; color:black">
+                Stop/Loss
+            </th>
+            <th style="text-align:center; font-size:12px; color:black">
+                Take/Profit
+            </th>
+            <th style="text-align:center; font-size:12px; color:black">
+                Entry reason
+            </th>
+           
+            <th style="text-align:center; font-size:12px; color:black">
+                Notes
+            </th>
+            <th>
+                <div class="btn btn-outline-success" style="background-color:blueviolet;border:solid;border-color:black;padding:0px; margin:0px;align-items:center;position:page">
+
+                    <a asp-controller="Trade" asp-action="AddTrade"  class="btn btn-sm btn-info">Add trade</a>
+                   
+                </div>
+            </th>
+            
+        </tr>
+
+        @foreach (var trade in Model.AllTrades)
+        {
+        <tr>
+
+            <td style="font-size:10px;color:black">
+                @Html.DisplayFor(t=>trade.TradePair)
+            </td>
+
+            <td style="font-size:10px;color:black;text-align:center">
+                @Html.DisplayFor(t=>trade.OrderType)
+            </td>
+
+            <td style="font-size:10px;color:black;text-align:center">
+                @Html.DisplayFor(t => trade.TradeStatus)
+            </td>
+
+            <td style="font-size:10px;color:black;text-align:center">
+                @Html.DisplayFor(t => trade.Quantity)
+            </td>
+
+            <td style="font-size:10px;color:black;text-align:center">
+                @Html.DisplayFor(t => trade.ExecutionPrice)
+            </td>
+
+            <td style="font-size:10px;color:black;text-align:center">
+                @Html.DisplayFor(t => trade.ExecutionDate)
+            </td>
+
+            <td style="font-size:10px;color:black;text-align:center">
+                @if (trade.ClosingDate.HasValue)
+                {
+                    @Html.DisplayFor(t => trade.ClosingPrice)
+                }
+
+            </td>
+
+            <td style="font-size:10px;color:black;text-align:center">
+                @if (trade.ClosingDate.HasValue)
+                {
+                    @Html.DisplayFor(t => trade.ClosingDate)
+                }
+
+            </td>
+
+            <td style="font-size:10px;color:black;text-align:center">
+                @Html.DisplayFor(t => trade.StopLoss)
+            </td>
+
+            <td style="font-size:10px;color:black;text-align:center">
+                @Html.DisplayFor(t => trade.TakeProfit)
+            </td>
+
+            <td style="font-size:10px;color:black">
+                @Html.DisplayFor(t => trade.ReasonForEntry)
+            </td>
+
+
+            <td style="font-size:10px;color:black; white-space:nowrap;width:100px;overflow:hidden;text-overflow:ellipsis;display:block">
+                @Html.DisplayFor(t => trade.Notes)
+            </td>
+
+            <td style=" text-align:center">
+                <div class="btn-block btn-group-sm">
+
+                    <a asp-controller="Trade" asp-action="Details" asp-route-id="@trade.Id" class="btn btn-sm btn-info">Details</a>
+                    <a asp-controller="Trade" asp-action="EditTrade" asp-route-id="@trade.Id" class="btn btn-outline-success">Edit</a>
+                    <a asp-controller="Trade" asp-action="DeleteTrade" asp-route-id="@trade.Id" class="btn btn-outline-danger">Delete</a>
+                    <a asp-controller="Trade" asp-action="CloseTrade" asp-route-id="@trade.Id" class="btn btn-warning">Close</a>
+
+                </div>
+            </td>
+
+        </tr>
+        }
+
+    </table>
+</div>
+<br />
+
+
+
+
+

@@ -1,0 +1,92 @@
+﻿@model  EditTradeViewModel
+@{
+    ViewData["Title"] = $"Edit {Model.TradePair} trade";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="TradePair">Traded pair</label>
+                <select asp-for="TradePair" asp-items="Html.GetEnumSelectList<TradedPair>()" class="form-control"></select>
+                <span asp-validation-for="TradePair" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderType">Order type</label>
+                <select asp-for="OrderType" asp-items="Html.GetEnumSelectList<OrderType>()" class="form-control"></select>
+                <span asp-validation-for="OrderType" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TradeStatus">Status</label>
+                <select asp-for="TradeStatus" asp-items="Html.GetEnumSelectList<TradeStatus>()" class="form-control"></select>
+                <span asp-validation-for="TradeStatus" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity">Size</label>
+                <input asp-for="Quantity" class=" form-control">
+                <span asp-validation-for="Quantity" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExecutionPrice">Entry price</label>
+                <input asp-for="ExecutionPrice" class=" form-control">
+                <span asp-validation-for="ExecutionPrice" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExecutionDate">Execution date</label>
+                <input asp-for="ExecutionDate" class=" form-control">
+                <span asp-validation-for="ExecutionDate" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClosingPrice">Closing price</label>
+                <input asp-for="ClosingPrice" class=" form-control">
+                <span asp-validation-for="ClosingPrice" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClosingDate">Closing date</label>
+                <input asp-for="ClosingDate" class=" form-control">
+                <span asp-validation-for="ClosingDate" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StopLoss">StopLoss</label>
+                <input asp-for="StopLoss" class="form-control" />
+                <span asp-validation-for="StopLoss" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="TakeProfit">TakeProfit</label>
+                <input asp-for="TakeProfit" class="form-control" />
+                <span asp-validation-for="TakeProfit" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Swap">Swap</label>
+                <input asp-for="Swap" class="form-control" />
+                <span asp-validation-for="Swap" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Commissions">Commissions</label>
+                <input asp-for="Commissions" class="form-control" />
+                <span asp-validation-for="Commissions" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ReasonForEntry">Entry reason</label>
+                <select asp-for="ReasonForEntry" asp-items="Html.GetEnumSelectList<ReasonForEntry>()" class="form-control"></select>
+                <span asp-validation-for="ReasonForEntry" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Notes"></label>
+                <textarea asp-for="Notes" rows="12" cols="150"></textarea>
+                <span asp-validation-for="Notes" class="form-text text-danger"></span>
+            </div>
+
+            <div>
+                <input class="btn btn-sm btn-success" type="submit" value="Edit trade" />
+            </div>
+        </form>
+    </div>
+</div>
